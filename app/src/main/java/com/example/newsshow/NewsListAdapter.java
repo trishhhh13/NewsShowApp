@@ -5,15 +5,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class NewsListAdapter extends ArrayAdapter<News> {
 
-    public NewsListAdapter(Context context, ArrayList<News> news) {
+    public NewsListAdapter(Context context,int resource, ArrayList<News> news) {
 
-        super(context, 0, news);
+        super(context, resource, news);
     }
 
     @Override
@@ -27,14 +28,14 @@ public class NewsListAdapter extends ArrayAdapter<News> {
 
         News news = getItem(position);
 
-//        ImageView newsImage = (ImageView) listItemView.findViewById(R.id.imageView);
-//        newsImage.setImageResource(news.getImageResource());
+        ImageView newsImage = (ImageView) listItemView.findViewById(R.id.newsImage);
+        newsImage.setImageBitmap(news.getImageResource());
 
         TextView title = (TextView) listItemView.findViewById(R.id.newsTitle);
         title.setText(news.getTitle());
 
-        TextView author = (TextView) listItemView.findViewById(R.id.author);
-        author.setText(news.getAuthor());
+        TextView author = (TextView) listItemView.findViewById(R.id.source);
+        author.setText(news.getSource());
 
         TextView date = (TextView) listItemView.findViewById(R.id.date);
         date.setText(news.getDate());
