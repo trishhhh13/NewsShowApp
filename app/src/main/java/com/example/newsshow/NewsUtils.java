@@ -27,10 +27,9 @@ public final class NewsUtils {
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static ArrayList<News> fetchNewsData(String requestUrl) throws Exception {
-        // Create URL object
+
         URL url = createUrl(requestUrl);
 
-        // Perform HTTP request to the URL and receive a JSON response back
         String jsonResponse = null;
         try {
             jsonResponse = makeHttpRequest(url);
@@ -38,9 +37,6 @@ public final class NewsUtils {
             Log.e(LOG_TAG, "Problem making the HTTP request.", e);
         }
 
-        // Extract relevant fields from the JSON response and create a list of {@link Earthquake}s
-
-        // Return the list of {@link Earthquake}s
         return extractNews(jsonResponse);
     }
 
@@ -83,7 +79,7 @@ public final class NewsUtils {
                 Log.e(LOG_TAG, "Error response code: " + urlConnection.getResponseCode());
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, "Problem retrieving the earthquake JSON results.", e);
+            Log.e(LOG_TAG, "Problem retrieving the news JSON results.", e);
         } finally {
             if (urlConnection != null) {
                 urlConnection.disconnect();

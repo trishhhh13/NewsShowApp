@@ -4,7 +4,8 @@ import android.graphics.Bitmap;
 
 public class News {
 
-    private String source, title, url, date;
+    private static String url;
+    private String source, title, date;
     private Bitmap image;
 
     public News(String author, String title, String url, Bitmap imageUrl, String date) {
