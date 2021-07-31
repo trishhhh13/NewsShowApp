@@ -5,4 +5,19 @@
     <string name="date_of_publication">Date of publication</string>
     <string name="this_is_the_image_of_the_news_shown">This is the image of the news shown</string>
     <string name="source">Source</string>
+    <string name="country">Country</string>
+    <string name="category">Category</string>
+    <string name="united_arab_emirates">United Arab Emirates</string>
+    <string name="india">India</string>
+    <string name="united_states">United States</string>
+    <string name="netherlands">Netherlands</string>
+    <string name="south_africa">South Africa</string>
+    <string name="canada">Canada</string>
+    <string name="business">Business</string>
+    <string name="science">Science</string>
+    <string name="sports">Sports</string>
+    <string name="health">Health</string>
+    <string name="technology">Technology</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="general">General</string>
 </resources>

@@ -28,16 +28,16 @@ public class NewsListAdapter extends ArrayAdapter<News> {
 
         News news = getItem(position);
 
-        ImageView newsImage = (ImageView) listItemView.findViewById(R.id.newsImage);
+        ImageView newsImage = listItemView.findViewById(R.id.newsImage);
         newsImage.setImageBitmap(news.getImageResource());
 
-        TextView title = (TextView) listItemView.findViewById(R.id.newsTitle);
+        TextView title = listItemView.findViewById(R.id.newsTitle);
         title.setText(news.getTitle());
 
-        TextView author = (TextView) listItemView.findViewById(R.id.source);
+        TextView author = listItemView.findViewById(R.id.source);
         author.setText(news.getSource());
 
-        TextView date = (TextView) listItemView.findViewById(R.id.date);
+        TextView date = listItemView.findViewById(R.id.date);
         date.setText(news.getDate());
 
         return listItemView;

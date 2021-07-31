@@ -5,18 +5,18 @@ import android.graphics.Bitmap;
 public class News {
 
     private static String url;
-    private String source, title, date;
-    private Bitmap image;
+    private final String source;
+    private final String title;
+    private final String date;
+    private final Bitmap image;
 
     public News(String author, String title, String url, Bitmap imageUrl, String date) {
         this.source = author;
         this.title = title;
-        this.url = url;
+        News.url = url;
         this.image = imageUrl;
         this.date = date;
     }
-    int imageResource = 0;
-
     public String getSource() {
         return source;
     }

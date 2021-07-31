@@ -45,7 +45,8 @@ public final class NewsUtils {
         try {
             url = new URL(requestUrl);
         } catch (MalformedURLException e) {
-            Log.e(LOG_TAG, "Problem building the URL ", e);
+//            Log.e(LOG_TAG, "Problem building the URL ", e);
+            Log.e(LOG_TAG, requestUrl, e);
         }
         return url;
     }
@@ -115,6 +116,7 @@ public final class NewsUtils {
             return null;
         }
         ArrayList<News> news = new ArrayList<>();
+        Bitmap image = null;
 
         try {
 
@@ -127,10 +129,10 @@ public final class NewsUtils {
                 date = date.substring(0,10);
                 String newsUrl = currentNews.getString("url");
                 String imageUrl = currentNews.getString("urlToImage");
-
-                URL imgUrl = new URL(imageUrl);
-                Bitmap image = BitmapFactory.decodeStream(imgUrl.openConnection().getInputStream());
-
+                if(!imageUrl.equals("null")) {
+                    URL imgUrl = new URL(imageUrl);
+                    image = BitmapFactory.decodeStream(imgUrl.openConnection().getInputStream());
+                }
                 JSONObject sources = currentNews.getJSONObject("source");
                 String sourceName = sources.getString("name");
                 News newNews = new News(sourceName, title, newsUrl, image, date);
